@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>English Qaballa Count Well Calculator</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;900&family=Share+Tech+Mono&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>English Qaballa Count Well Calculator</h1>
+            <p class="quote">"That stélé they shall call the Abomination of Desolation; count well its name, & it shall be to you as 718."</p>
+            <p class="attribution">Methods derived from Jake Stratton-Kent's Liber 187</p>
+        </header>
+
+        <!-- Tab Navigation -->
+        <nav class="tab-nav">
+            <button class="tab-btn active" data-tab="count-well">Count Well</button>
+            <button class="tab-btn" data-tab="simple-alw">Simple ALW</button>
+            <button class="tab-btn" data-tab="kamea">WAKANABA KAMEA</button>
+        </nav>
+
+        <main>
+            <!-- Count Well Tab Content -->
+            <div class="tab-content active" id="count-well">
+                <div class="calculator-section">
+                    <div class="input-group">
+                        <label for="phrase-input">Enter two words separated by a space:</label>
+                        <input type="text" id="phrase-input" placeholder="e.g., AZURE LIDDED" maxlength="100">
+                        <button id="calculate-btn">COUNT WELL</button>
+                    </div>
+
+                    <div class="results" id="results" style="display: none;">
+                        <div class="word-results">
+                            <div class="word-result">
+                                <h3>First Word: <span id="word1-text"></span></h3>
+                                <p>ALW Value: <span id="word1-value"></span></p>
+                                <p>Letter Count: <span id="word1-count"></span></p>
+                                <p>Calculation: <span id="word1-calc"></span></p>
+                            </div>
+                            
+                            <div class="word-result">
+                                <h3>Second Word: <span id="word2-text"></span></h3>
+                                <p>ALW Value: <span id="word2-value"></span></p>
+                                <p>Letter Count: <span id="word2-count"></span></p>
+                                <p>Calculation: <span id="word2-calc"></span></p>
+                            </div>
+                        </div>
+
+                        <div class="final-result">
+                            <h2>Count Well Total: <span id="final-total"></span></h2>
+                            <p class="calculation-breakdown" id="breakdown"></p>
+                        </div>
+                    </div>
+
+                    <div class="error-message" id="error-message" style="display: none;"></div>
+                </div>
+
+                <div class="instructions">
+                    <h3>How Counting Well Works</h3>
+                    <ol>
+                        <li>Calculate the ALW value of the first word</li>
+                        <li>Multiply that value by the number of letters in the second word</li>
+                        <li>Calculate the ALW value of the second word</li>
+                        <li>Multiply that value by the number of letters in the first word</li>
+                        <li>Add both multiplication results together for the final Count Well total</li>
+                    </ol>
+                </div>
+            </div>
+
+            <!-- Simple ALW Tab Content -->
+            <div class="tab-content" id="simple-alw">
+                <div class="calculator-section">
+                    <div class="input-group">
+                        <label for="simple-input">Enter word or phrase:</label>
+                        <input type="text" id="simple-input" placeholder="e.g., THELEMA" maxlength="200">
+                        <button id="simple-calculate-btn">Calculate ALW</button>
+                    </div>
+
+                    <div class="simple-results" id="simple-results" style="display: none;">
+                        <div class="simple-result">
+                            <h3>Word/Phrase: <span id="simple-word"></span></h3>
+                            <div class="letter-breakdown" id="letter-breakdown"></div>
+                            <div class="simple-final-result">
+                                <h2>ALW Total: <span id="simple-total"></span></h2>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="simple-error-message" id="simple-error-message" style="display: none;"></div>
+                </div>
+
+                <div class="instructions">
+                    <h3>About Simple ALW Calculation</h3>
+                    <p>The Simple ALW Calculator computes the gematria value of any word or phrase using the English Qaballa ALW cipher. Each letter is assigned a specific numerical value, and the total is the sum of all letter values.</p>
+                    <br>
+                    <p>The calculator ignores spaces and punctuation, focusing only on alphabetical characters. It provides a detailed breakdown showing each letter and its corresponding value.</p>
+                </div>
+            </div>
+            
+            <!-- Kamea Tab Content -->
+            <div class="tab-content" id="kamea">
+                <div class="calculator-section">
+                    <div class="input-group">
+                        <label for="kamea-input">Enter two words separated by a space:</label>
+                        <input type="text" id="kamea-input" placeholder="e.g., BLACK STONE" maxlength="100">
+                        <button id="kamea-calculate-btn">Generate Kamea</button>
+                    </div>
+
+                    <div class="kamea-results" id="kamea-results" style="display: none;">
+                        <h3>Wakanaba Kamea for: <span id="kamea-phrase"></span></h3>
+                        
+                        <div class="kamea-grid-container">
+                            <div class="kamea-grid" id="kamea-grid"></div>
+                        </div>
+                        
+                        <div class="barbarous-words">
+                            <h3>Barbarous Words:</h3>
+                            <div id="barbarous-words-list"></div>
+                        </div>
+                        
+                        <div class="grand-word">
+                            <h3>Grand Word of the Kamea:</h3>
+                            <div class="grand-word-result">
+                                <div class="grand-word-calculation" id="grand-word-calculation"></div>
+                                <div class="grand-word-value" id="grand-word-value"></div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="kamea-error-message" id="kamea-error-message" style="display: none;"></div>
+                </div>
+
+                <div class="instructions">
+                    <h3>About The Wakanaba Kamea Extrapolator</h3>
+                    <p>This calculator creates a magical kamea (grid) from two words, where the first word forms the vertical axis and the second word forms the horizontal axis.</p>
+                    <p>Each cell in the grid contains the sum of the ALW values of the corresponding letters. These numbers are then converted into barbarous words using the WAKANABA table.</p>
+                    
+                    <h4>WAKANABA Table:</h4>
+                    <div class="wakanaba-table">
+                        <div class="wakanaba-row">
+                            <span>A</span> <span>W</span> <span>K</span> <span>N</span> <span>B</span>
+                        </div>
+                        <div class="wakanaba-row">
+                            <span>O</span> <span>H</span> <span>V</span> <span>Y</span> <span>M</span>
+                        </div>
+                        <div class="wakanaba-row">
+                            <span>U</span> <span>S</span> <span>G</span> <span>J</span> <span>X</span>
+                        </div>
+                        <div class="wakanaba-row">
+                            <span>I</span> <span>D</span> <span>R</span> <span>F</span> <span>T</span>
+                        </div>
+                        <div class="wakanaba-row">
+                            <span>E</span> <span>Z</span> <span>C</span> <span>Q</span> <span>P</span>
+                        </div>
+                    </div>
+                    
+                    <h4>Rules for Barbarous Words:</h4>
+                    <ol>
+                        <li>Consonants are followed by the vowel on their corresponding line (e.g., W=WA, H=HO)</li>
+                        <li>Vowels are followed by L (e.g., A=AL, E=EL)</li>
+                        <li>Numbers above 26 are split into tens and ones (e.g., 45=HO-SU)</li>
+                        <li>The number 2 always becomes LA</li>
+                        <li>Double numbers are halved (e.g., 44=HO, 55=SU)</li>
+                        <li>Zero is treated as 7 (e.g., 40=HO-OL)</li>
+                    </ol>
+                    
+                    <h4>Grand Word of the Kamea:</h4>
+                    <p>The Grand Word is calculated by summing all values in the kamea and converting the total to a barbarous word using the same rules. This word represents the unified magical essence of the entire kamea.</p>
+                </div>
+            </div>
+        </main>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
