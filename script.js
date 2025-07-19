@@ -594,4 +594,3 @@ document.addEventListener('DOMContentLoaded', function() {
     // Example for kamea
     document.getElementById('kamea-input').value = 'BLACK STONE';
 });
-
