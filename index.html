@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>English Qaballa Count Well Calculator</title>
     <link rel="stylesheet" href="style.css">
-    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;900&family=Share+Tech+Mono&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;700&family=Cormorant+Garamond:wght@400;500;600&display=swap" rel="stylesheet">
 </head>
 <body>
     <div class="container">
@@ -57,25 +57,14 @@
 
                     <div class="error-message" id="error-message" style="display: none;"></div>
                 </div>
-
-                <div class="instructions">
-                    <h3>How Counting Well Works</h3>
-                    <ol>
-                        <li>Calculate the ALW value of the first word</li>
-                        <li>Multiply that value by the number of letters in the second word</li>
-                        <li>Calculate the ALW value of the second word</li>
-                        <li>Multiply that value by the number of letters in the first word</li>
-                        <li>Add both multiplication results together for the final Count Well total</li>
-                    </ol>
-                </div>
             </div>
 
             <!-- Simple ALW Tab Content -->
             <div class="tab-content" id="simple-alw">
                 <div class="calculator-section">
                     <div class="input-group">
-                        <label for="simple-input">Enter word or phrase:</label>
-                        <input type="text" id="simple-input" placeholder="e.g., THELEMA" maxlength="200">
+                        <label for="simple-input">Enter word, phrase, or number:</label>
+                        <input type="text" id="simple-input" placeholder="e.g., THELEMA or 93" maxlength="200">
                         <button id="simple-calculate-btn">Calculate ALW</button>
                     </div>
 
@@ -86,17 +75,11 @@
                             <div class="simple-final-result">
                                 <h2>ALW Total: <span id="simple-total"></span></h2>
                             </div>
+                            <!-- Correspondences will be added here dynamically -->
                         </div>
                     </div>
 
                     <div class="simple-error-message" id="simple-error-message" style="display: none;"></div>
-                </div>
-
-                <div class="instructions">
-                    <h3>About Simple ALW Calculation</h3>
-                    <p>The Simple ALW Calculator computes the gematria value of any word or phrase using the English Qaballa ALW cipher. Each letter is assigned a specific numerical value, and the total is the sum of all letter values.</p>
-                    <br>
-                    <p>The calculator ignores spaces and punctuation, focusing only on alphabetical characters. It provides a detailed breakdown showing each letter and its corresponding value.</p>
                 </div>
             </div>
             
@@ -141,19 +124,39 @@
                     <h4>WAKANABA Table:</h4>
                     <div class="wakanaba-table">
                         <div class="wakanaba-row">
-                            <span>A</span> <span>W</span> <span>K</span> <span>N</span> <span>B</span>
+                            <div class="wakanaba-cell">A</div>
+                            <div class="wakanaba-cell">W</div>
+                            <div class="wakanaba-cell">K</div>
+                            <div class="wakanaba-cell">N</div>
+                            <div class="wakanaba-cell">B</div>
                         </div>
                         <div class="wakanaba-row">
-                            <span>O</span> <span>H</span> <span>V</span> <span>Y</span> <span>M</span>
+                            <div class="wakanaba-cell">O</div>
+                            <div class="wakanaba-cell">H</div>
+                            <div class="wakanaba-cell">V</div>
+                            <div class="wakanaba-cell">Y</div>
+                            <div class="wakanaba-cell">M</div>
                         </div>
                         <div class="wakanaba-row">
-                            <span>U</span> <span>S</span> <span>G</span> <span>J</span> <span>X</span>
+                            <div class="wakanaba-cell">U</div>
+                            <div class="wakanaba-cell">S</div>
+                            <div class="wakanaba-cell">G</div>
+                            <div class="wakanaba-cell">J</div>
+                            <div class="wakanaba-cell">X</div>
                         </div>
                         <div class="wakanaba-row">
-                            <span>I</span> <span>D</span> <span>R</span> <span>F</span> <span>T</span>
+                            <div class="wakanaba-cell">I</div>
+                            <div class="wakanaba-cell">D</div>
+                            <div class="wakanaba-cell">R</div>
+                            <div class="wakanaba-cell">F</div>
+                            <div class="wakanaba-cell">T</div>
                         </div>
                         <div class="wakanaba-row">
-                            <span>E</span> <span>Z</span> <span>C</span> <span>Q</span> <span>P</span>
+                            <div class="wakanaba-cell">E</div>
+                            <div class="wakanaba-cell">Z</div>
+                            <div class="wakanaba-cell">C</div>
+                            <div class="wakanaba-cell">Q</div>
+                            <div class="wakanaba-cell">P</div>
                         </div>
                     </div>
                     
